@@ -16,6 +16,10 @@
 !bin/symfony_requirements
 /composer.phar
 /web/uploads/*
+/web/uploads/team/*
+/web/uploads/catalog/*
+!/web/uploads/team/
+!/web/uploads/catalog/
 !/web/uploads/.gitkeep
 !/web/uploads/team/.gitkeep
 !/web/uploads/catalog/.gitkeep
