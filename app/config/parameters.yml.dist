@@ -1,0 +1,21 @@
+parameters:
+    domain:   'company-site.local'
+    allowed.locales:   ['en']
+    requirements.locales: 'en'
+    default_database: company
+    default_server: "mongodb://localhost:27017"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       'manager@company.com'
+    mailer_password:   'password'
+    mailer_encryption: ssl
+    mailer_auth_mode: login
+    mailer_port: 465
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    debug_toolbar:          true
+    debug_redirects:        false
+    use_assetic_controller: true

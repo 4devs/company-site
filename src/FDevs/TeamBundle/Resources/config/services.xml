@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="f_devs_team.form.type.user_roles.class">FDevs\TeamBundle\Form\Type\UserRolesType</parameter>
+        <parameter key="f_devs_team.form.type.user_connect.class">FDevs\TeamBundle\Form\Type\ConnectType</parameter>
+        <parameter key="f_devs_team.form.type.user.class">FDevs\TeamBundle\Form\Type\UserType</parameter>
+    </parameters>
+
+    <services>
+        <service id="f_devs_team.form.type.user_roles" class="%f_devs_team.form.type.user_roles.class%">
+            <tag name="form.type" alias="fdevs_user_roles"/>
+            <argument type="service" id="security.context" />
+            <argument>%security.role_hierarchy.roles%</argument>
+            <argument>false</argument>
+        </service>
+
+        <service id="f_devs_team.form.type.user_connect" class="%f_devs_team.form.type.user_connect.class%">
+            <tag name="form.type" alias="fdevs_user_connect"/>
+        </service>
+        <service id="f_devs_team.form.type.user" class="%f_devs_team.form.type.user.class%">
+            <tag name="form.type" alias="fdevs_user"/>
+        </service>
+    </services>
+</container>

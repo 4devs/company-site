@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="f_devs.team.admin.user.document">FDevs\TeamBundle\Model\User</parameter>
+        <parameter key="f_devs.team.admin.group.document">FDevs\TeamBundle\Model\Group</parameter>
+        <parameter key="f_devs.team.admin.label_catalogue">FDevsTeamBundle</parameter>
+        <parameter key="f_devs.team.admin.user.class">FDevs\TeamBundle\Sonata\Admin\UserAdmin</parameter>
+        <parameter key="f_devs.team.admin.group.class">FDevs\TeamBundle\Sonata\Admin\GroupAdmin</parameter>
+        <parameter key="f_devs.team.admin.user.translation_domain">FDevsTeamBundle</parameter>
+        <parameter key="f_devs.team.admin.group.translation_domain">FDevsTeamBundle</parameter>
+        <parameter key="f_devs.team.admin.groupname">Team</parameter>
+    </parameters>
+    <services>
+        <service id="f_devs.team.admin.user" class="%f_devs.team.admin.user.class%">
+            <tag name="sonata.admin" label_catalogue="%f_devs.team.admin.label_catalogue%"
+                 manager_type="doctrine_mongodb" group="%f_devs.team.admin.groupname%" label="teams"/>
+            <argument/>
+            <argument>%f_devs.team.admin.user.document%</argument>
+            <argument/>
+            <call method="setTranslationDomain">
+                <argument>%f_devs.team.admin.user.translation_domain%</argument>
+            </call>
+        </service>
+
+        <service id="f_devs.team.admin.group" class="%f_devs.team.admin.group.class%">
+            <tag name="sonata.admin" label_catalogue="%f_devs.team.admin.label_catalogue%"
+                 manager_type="doctrine_mongodb" group="%f_devs.team.admin.groupname%" label="groups"/>
+            <argument/>
+            <argument>%f_devs.team.admin.group.document%</argument>
+            <argument/>
+            <call method="setTranslationDomain">
+                <argument>%f_devs.team.admin.group.translation_domain%</argument>
+            </call>
+        </service>
+    </services>
+</container>

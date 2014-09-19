@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        {{ form_start(form,{'attr':{'novalidate':'novalidate'} }) }}
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name,{'attr':{'class':'form-control','data-validation-required-message':'required.message.name'|trans({},'FDevsContactUsBundle') } }) }}
+                <p class="help-block text-danger">{{ form_errors(form.name) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email,{'attr':{'class':'form-control','data-validation-required-message':'required.message.email'|trans({},'FDevsContactUsBundle')} }) }}
+                <p class="help-block text-danger">{{ form_errors(form.email) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.phone) }}
+                {{ form_widget(form.phone,{'attr':{'class':'form-control'} }) }}
+                <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message,{'attr':{'class':'form-control','data-validation-required-message':'required.message.message'|trans({},'FDevsContactUsBundle'),'rows':5 } }) }}
+                <p class="help-block text-danger">{{ form_errors(form.message) }}</p>
+            </div>
+        </div>
+        <br>
+
+        <div id="success">{{ form_errors(form) }}</div>
+        <div class="row">
+            <div class="form-group col-xs-12">
+                {{ form_widget(form.submit,{'attr':{'class':'btn btn-success btn-lg'} }) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>

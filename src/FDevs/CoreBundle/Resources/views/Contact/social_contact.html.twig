@@ -1,0 +1,5 @@
+<ul class="list-inline">
+    {% for oneConnect in contact.connectList %}
+        {{ connect(oneConnect,{'template':tpl_connect}) }}
+    {% endfor %}
+</ul>

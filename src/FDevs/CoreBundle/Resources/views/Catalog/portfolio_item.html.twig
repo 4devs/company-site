@@ -1,0 +1,12 @@
+{% spaceless %}
+    <div class="col-sm-4 portfolio-item">
+        <a href="#{{ item.id }}" class="portfolio-link" data-toggle="modal">
+            <div class="caption">
+                <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="{{ item.image }}" class="img-responsive" alt="">
+        </a>
+    </div>
+{% endspaceless %}

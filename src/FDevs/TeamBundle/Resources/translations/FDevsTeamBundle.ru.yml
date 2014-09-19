@@ -1,0 +1,5 @@
+form:
+    group_tag: 'Тэг'
+
+label:
+    users: "Пользователи"

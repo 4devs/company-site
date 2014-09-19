@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                        http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <document name="FDevs\TeamBundle\Model\User" collection="team">
+
+        <field name="id" fieldName="id" id="true"/>
+        <field name="createdAt" type="date"/>
+        <field name="displayName" type="int"/>
+        <field name="originalImage" type="string"/>
+        <field name="image" type="string"/>
+
+        <embed-many target-document="FDevs\TeamBundle\Model\Connect" field="connectList" fieldName="connectList"/>
+        <embed-many target-document="FDevs\PageBundle\Model\LocaleText" field="lastName" fieldName="lastName"/>
+        <embed-many target-document="FDevs\PageBundle\Model\LocaleText" field="firstName" fieldName="firstName"/>
+        <embed-many target-document="FDevs\PageBundle\Model\LocaleText" field="about" fieldName="about"/>
+        <embed-many target-document="FDevs\PageBundle\Model\LocaleText" field="position" fieldName="position"/>
+        <reference-many target-document="FDevs\TeamBundle\Model\Group" field="groups" simple="true">
+            <cascade>
+                <refresh/>
+            </cascade>
+        </reference-many>
+        <reference-many target-document="FDevs\TagBundle\Model\Tag" field="skills" simple="true">
+            <cascade>
+                <refresh/>
+            </cascade>
+        </reference-many>
+
+    </document>
+
+</doctrine-mongo-mapping>

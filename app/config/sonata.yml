@@ -1,0 +1,76 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        # Enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.user.block.menu:
+        f_devs_block.service.block:
+
+sonata_admin:
+    security:
+        acl_user_manager: fos_user.user_manager
+    title: 4devs company
+    dashboard:
+        groups:
+            label.tags:
+                label_catalogue: FDevsTagBundle
+                items:
+                    - f_devs_tag.admin.tag
+            label.block:
+                label_catalogue: FDevsBlockBundle
+                items:
+                    - f_devs_block.admin_block
+            label.contactUs:
+                label_catalogue: FDevsContactUsBundle
+                items:
+                    - f_devs_contact_us.admin.contact_us
+                    - f_devs_contact_us.admin.contact
+            label.catalog:
+                label_catalogue: FDevsCatalogBundle
+                items:
+                    - f_devs_catalog.admin.item
+            label.users:
+                label_catalogue: FDevsTeamBundle
+                items:
+                    - f_devs.team.admin.user
+                    - f_devs.team.admin.group
+    extensions:
+        f_devs_page.admin_extension.page:
+            implements:
+                - FDevs\PageBundle\Model\PageInterface
+        f_devs_page.admin_extension.meta:
+            implements:
+                - FDevs\PageBundle\Model\MetaInterface
+    assets:
+        stylesheets:
+            - bundles/sonataadmin/vendor/bootstrap/dist/css/bootstrap.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/font-awesome.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/ionicons.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE.css
+            - bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+            - bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css
+            - bundles/sonataadmin/vendor/select2/select2.css
+            - bundles/sonataadmin/vendor/select2/select2-bootstrap.css
+            - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
+            - bundles/sonataadmin/css/styles.css
+            - bundles/sonataadmin/css/layout.css
+            - bundles/fdevsfile/css/jquery.fileupload.css
+        javascripts:
+            - bundles/sonataadmin/vendor/jquery/dist/jquery.min.js
+            - bundles/sonataadmin/vendor/jquery.scrollTo/jquery.scrollTo.min.js
+            - bundles/sonatacore/vendor/moment/min/moment.min.js
+            - bundles/sonataadmin/vendor/bootstrap/dist/js/bootstrap.min.js
+            - bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
+            - bundles/sonataadmin/vendor/jqueryui/ui/minified/jquery-ui.min.js
+            - bundles/sonataadmin/vendor/jqueryui/ui/minified/i18n/jquery-ui-i18n.min.js
+            - bundles/sonataadmin/jquery/jquery.form.js
+            - bundles/sonataadmin/jquery/jquery.confirmExit.js
+            - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js
+            - bundles/sonataadmin/vendor/select2/select2.min.js
+            - bundles/sonataadmin/App.js
+            - bundles/sonataadmin/Admin.js
+            - bundles/fdevsfile/js/vendor/jquery.ui.widget.js
+            - bundles/fdevsfile/js/jquery.iframe-transport.js
+            - bundles/fdevsfile/js/jquery.fileupload.js
+            - bundles/fdevsfile/js/fileUpload.js

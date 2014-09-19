@@ -1,0 +1,69 @@
+f_devs_contact_us:
+    resource: "@FDevsContactUsBundle/Resources/config/routing.xml"
+    prefix:   /{_locale}/
+    host:     "{domain}"
+    defaults:
+        _locale: %locale%
+        domain: %domain%
+    requirements:
+        _locale: %requirements.locales%
+        domain: %domain%
+
+f_devs_file:
+    resource: "@FDevsFileBundle/Resources/config/routing.xml"
+    prefix:   /file
+    host:     "admin.{domain}"
+    defaults:
+        _locale: %locale%
+        domain: %domain%
+    requirements:
+        _locale: %requirements.locales%
+        domain: %domain%
+
+f_devs_geo:
+    resource: "@FDevsGeoBundle/Resources/config/routing.xml"
+    prefix:   /{_locale}
+
+f_devs_core:
+    resource: "@FDevsCoreBundle/Resources/config/routing.xml"
+    prefix:   /{_locale}/
+    host:     "{domain}"
+    defaults:
+        _locale: %locale%
+        domain: %domain%
+    requirements:
+        _locale: %requirements.locales%
+        domain: %domain%
+
+home_redirect:
+    pattern: /
+    host:     "{domain}"
+    defaults:
+        _controller: FDevsCoreBundle:Locale:switch
+        route: f_devs_core_homepage
+        statusCode: 301
+        useReferrer: false
+    requirements:
+        domain: %domain%
+    defaults:
+        domain: %domain%
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    host:     "admin.{domain}"
+    requirements:
+        domain: %domain%
+    defaults:
+        domain: %domain%
+
+f_devs_admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    host:     "admin.{domain}"
+    requirements:
+        domain: %domain%
+    defaults:
+        domain: %domain%

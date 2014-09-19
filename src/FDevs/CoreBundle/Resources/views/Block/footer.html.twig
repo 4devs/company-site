@@ -1,0 +1,7 @@
+{% extends "FDevsBlockBundle:Default:block.html.twig" %}
+{% block block %}
+    {% spaceless %}
+        <h3>{{ data.title|t }}</h3>
+        {{ data.content|t }}
+    {% endspaceless %}
+{% endblock %}

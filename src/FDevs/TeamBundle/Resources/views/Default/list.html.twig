@@ -1,0 +1,20 @@
+{% spaceless %}
+    <div class="row users">
+        {% set countUsers = users|length<3?12/users|length:4 %}
+        {% for user in users %}
+            <div class="col-sm-{{ countUsers }}">
+                <div class="team-member">
+                    <img src="{{ thumb(user.image,"small","team") }}" class="img-responsive img-circle" alt="">
+                    <h4>{{ user.firstName|t }} {{ user.displayName == 1 ?user.lastName|t:(user.lastName|t[:1]~'.') }}</h4>
+
+                    <p class="text-muted">{{ user.position|t }}</p>
+                    <ul class="list-inline social-buttons">
+                        {% for connect in user.connectList %}
+                            <li><a href="{{ connect.href }}" title="{{ connect.text }}"><i class="fa fa-{{ connect.type }}"></i></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endspaceless %}

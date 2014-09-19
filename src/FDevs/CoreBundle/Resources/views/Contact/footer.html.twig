@@ -1,0 +1,5 @@
+{% extends "FDevsContactUsBundle:Contact:connect.html.twig" %}
+
+{% block default %}
+    <li><a href="{{ data.href }}" title="{{ data.text }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ data.type }}"></i></a></li>
+{% endblock default %}

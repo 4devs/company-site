@@ -1,0 +1,34 @@
+menu:
+    about: 'About'
+    portfolio: 'Portfolio'
+    team: 'Team'
+    contact: 'Contact'
+
+brand: '4devs'
+title: '4devs - Company Site'
+
+meta:
+    description: "Symfony is a set of PHP Components, a Web Application framework, a Philosophy, and a Community — all working together in harmony."
+    keywords: "4devs, symfony2, symfony, project, framework, php, php5, open-source, components, symphony, symfony framework, symfony tutorial"
+
+intro:
+    lead: 'Company site based on Symfony2!'
+    heading: "Symfony is a set of PHP Components, a Web Application framework, a Philosophy, and a Community — all working together in harmony."
+
+about:
+    heading: 'About'
+    download: 'Download'
+
+portfolio:
+    heading: 'Portfolio'
+    button: 'Close project'
+
+team:
+    heading: 'Our Amazing Team'
+
+contact:
+    heading: 'Contact Us'
+
+footer:
+    around: 'Around the Web'
+
